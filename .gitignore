@@ -1,0 +1,20 @@
+# 微信开发者工具私有配置（每台机器/每个开发者本地不同，不入库）
+# 本地打开项目时 DevTools 会自动生成
+project.private.config.json
+
+# 依赖
+node_modules/
+miniprogram_npm/
+
+# 构建产物与日志
+*.log
+dist/
+
+# 编辑器 / 系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Claude 等 AI 工具的本地会话记录
+.claude/

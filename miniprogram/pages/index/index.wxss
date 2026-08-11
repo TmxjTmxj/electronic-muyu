@@ -1,0 +1,57 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fef7e0;
+}
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #8b4513;
+  margin-bottom: 60rpx;
+}
+.muyu {
+  width: 300rpx;
+  height: 300rpx;
+  background-color: #ffd966;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.2);
+  margin-bottom: 60rpx;
+  transition: transform 0.1s;
+}
+.muyu:active {
+  transform: scale(0.95);
+}
+.emoji {
+  font-size: 180rpx;
+}
+.count {
+  font-size: 44rpx;
+  color: #2e7d32;
+  margin-bottom: 50rpx;
+}
+.hit-btn {
+  background-color: #ff9800;
+  color: white;
+  width: 60%;
+  margin-bottom: 20rpx;
+  border-radius: 50rpx;
+}
+.reset-btn {
+  background-color: #9e9e9e;
+  color: white;
+  width: 60%;
+  margin-bottom: 30rpx;
+  border-radius: 50rpx;
+}
+.tips {
+  font-size: 26rpx;
+  color: #aaa;
+  position: absolute;
+  bottom: 50rpx;
+}

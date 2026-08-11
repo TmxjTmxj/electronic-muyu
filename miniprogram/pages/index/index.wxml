@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="title">功德木鱼</view>
+  <view class="muyu" bindtap="onHit">
+    <text class="emoji">🥁</text>
+  </view>
+  <view class="count">功德：{{count}}</view>
+  <button class="hit-btn" bindtap="onHit">敲击木鱼</button>
+  <button class="reset-btn" bindtap="onReset">重置功德</button>
+  <view class="tips">点击木鱼或按钮，每次增加1功德</view>
+</view>
