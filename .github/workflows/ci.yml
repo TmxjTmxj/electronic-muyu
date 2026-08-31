@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate JSON config files
+        run: |
+          set -e
+          for f in package.json project.config.json tsconfig.json; do
+            test -f "$f" || { echo "missing $f"; exit 1; }
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8')); console.log('  $f valid JSON')"
+          done
+          test -f miniprogram/app.json && node -e "JSON.parse(require('fs').readFileSync('miniprogram/app.json','utf8')); console.log('  miniprogram/app.json valid JSON')"
+      - name: Check entry files exist
+        run: |
+          set -e
+          test -f miniprogram/app.js && echo "  app.js ok"
+          test -f miniprogram/app.wxss && echo "  app.wxss ok"
+          test -d miniprogram/pages && echo "  pages/ ok"
+          echo "All checks passed."
